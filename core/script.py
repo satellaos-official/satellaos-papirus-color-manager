@@ -14,6 +14,7 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtSvgWidgets import QSvgWidget
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+THEMES_DIR = os.path.join(SCRIPT_DIR, "themes")
 
 COLORS = {
     "dark": {
@@ -370,7 +371,7 @@ class MainWindow(QMainWindow):
         btn.setIconSize(QSize(24, 24))
         btn.setToolTip(tooltip)
         btn.clicked.connect(slot)
-        path = os.path.join(SCRIPT_DIR, "mode", icon_file)
+        path = os.path.join(THEMES_DIR, "mode", icon_file)
         if os.path.exists(path):
             btn.setIcon(QIcon(path))
         else:
@@ -394,13 +395,14 @@ class MainWindow(QMainWindow):
 
     def _refresh_preview(self):
         t    = self.selected_theme
-        base = os.path.join(SCRIPT_DIR, "papirus-folders", t)
+        base = os.path.join(THEMES_DIR, "papirus-folders", t)
         for widget, path in [
             (self.svg_folder,   os.path.join(base, f"folder-{t}.svg")),
             (self.svg_home,     os.path.join(base, f"user-{t}-home.svg")),
             (self.svg_download, os.path.join(base, f"folder-{t}-download.svg")),
         ]:
-            widget.load(path if os.path.exists(path) else "")
+            if os.path.exists(path):
+                widget.load(path)
 
     # ── apply ─────────────────────────────────────────────────────────
 

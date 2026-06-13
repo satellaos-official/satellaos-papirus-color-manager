@@ -5,7 +5,7 @@
 name=papirus-color-manager
 location=/tmp
 script_url=https://raw.githubusercontent.com/satellaos-official/satellaos-papirus-color-manager/main/core/script.py
-archive_url=https://raw.githubusercontent.com/satellaos-official/satellaos-papirus-color-manager/main/archive/themes.tar.gz
+archive_url=https://raw.githubusercontent.com/satellaos-official/satellaos-papirus-color-manager/main/archive/icons.tar.gz
 
 # - Checking The Internet Connection -
 

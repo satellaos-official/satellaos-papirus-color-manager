@@ -14,7 +14,7 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtSvgWidgets import QSvgWidget
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-THEMES_DIR = os.path.join(SCRIPT_DIR, "themes")
+THEMES_DIR = os.path.join(SCRIPT_DIR, "icons")
 
 COLORS = {
     "dark": {
